@@ -1,0 +1,13 @@
+# Dipendenze
+node_modules/
+
+# Variabili d'ambiente
+.env
+.env.local
+
+# Build
+dist/
+build/
+
+# Sistema
+.DS_Store
