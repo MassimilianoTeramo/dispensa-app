@@ -10,7 +10,10 @@ const prodottiRoutes = require('./routes/prodotti');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: ['https://dispensa-app-rho.vercel.app', 'http://localhost:5173'],
+  credentials: true,
+}));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
