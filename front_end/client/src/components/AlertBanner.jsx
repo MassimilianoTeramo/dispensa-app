@@ -22,7 +22,7 @@ function AlertBanner({ prodotti }) {
           color: 'var(--amber)',
           fontFamily: 'DM Sans, sans-serif',
         }}>
-          {prodotti.length} {prodotti.length === 1 ? 'prodotto in esaurimento' : 'prodotti in esaurimento'}
+          {prodotti.length} {prodotti.length === 1 ? 'item running low' : 'items running low'}
         </h3>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>

@@ -37,7 +37,7 @@ function Navbar() {
             color: 'var(--cream)',
             letterSpacing: '-0.5px',
           }}>
-            🌿 La mia Dispensa
+            🌿 My Storage
           </h1>
         </Link>
         <button
@@ -59,7 +59,7 @@ function Navbar() {
             e.target.style.backgroundColor = 'transparent';
           }}
         >
-          Esci
+          Log out
         </button>
       </header>
 
