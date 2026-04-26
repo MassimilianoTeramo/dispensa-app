@@ -6,6 +6,7 @@ const pool = new Pool({
 });
 
 // Crea le tabelle se non esistono
+
 const initDB = async () => {
   await pool.query(`
     CREATE TABLE IF NOT EXISTS utenti (
@@ -19,11 +20,20 @@ const initDB = async () => {
       id SERIAL PRIMARY KEY,
       utente_id INTEGER REFERENCES utenti(id) ON DELETE CASCADE,
       nome VARCHAR NOT NULL,
+      categoria VARCHAR DEFAULT 'Altro',
       quantita INTEGER NOT NULL DEFAULT 0,
       unita VARCHAR DEFAULT 'pezzi',
       soglia_minima INTEGER DEFAULT 1,
       scadenza DATE,
       created_at TIMESTAMP DEFAULT NOW()
+    );
+
+    CREATE TABLE IF NOT EXISTS prezzi (
+      id SERIAL PRIMARY KEY,
+      prodotto_id INTEGER REFERENCES prodotti(id) ON DELETE CASCADE,
+      supermercato VARCHAR NOT NULL,
+      prezzo DECIMAL(10,2) NOT NULL,
+      aggiornato_il TIMESTAMP DEFAULT NOW()
     );
   `);
   console.log('✅ Database pronto');

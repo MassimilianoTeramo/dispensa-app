@@ -3,6 +3,7 @@ import { useAuth } from './context/AuthContext';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dispensa from './pages/Dispensa';
+import DettaglioProdotto from './pages/DettaglioProdotto';
 import Navbar from './components/Navbar';
 
 const PrivateRoute = ({ children }) => {
@@ -20,6 +21,11 @@ function App() {
         <Route path="/" element={
           <PrivateRoute>
             <Dispensa />
+          </PrivateRoute>
+        } />
+         <Route path="/prodotto/:id" element={
+          <PrivateRoute>
+            <DettaglioProdotto />
           </PrivateRoute>
         } />
       </Routes>

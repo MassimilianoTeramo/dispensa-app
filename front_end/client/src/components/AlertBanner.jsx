@@ -3,20 +3,51 @@ function AlertBanner({ prodotti }) {
 
   return (
     <div style={{
-      backgroundColor: '#fff3cd',
-      border: '1px solid #ffc107',
-      borderRadius: 8,
-      padding: 16,
-      marginBottom: 24
+      backgroundColor: 'var(--amber-light)',
+      border: '1.5px solid var(--amber)',
+      borderRadius: 'var(--radius-md)',
+      padding: '16px 20px',
+      marginBottom: 24,
     }}>
-      <h3 style={{ margin: '0 0 8px 0' }}>⚠️ Prodotti in esaurimento</h3>
-      <ul style={{ margin: 0, paddingLeft: 20 }}>
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+        marginBottom: 10,
+      }}>
+        <span style={{ fontSize: 18 }}>⚠️</span>
+        <h3 style={{
+          fontSize: 15,
+          fontWeight: 600,
+          color: 'var(--amber)',
+          fontFamily: 'DM Sans, sans-serif',
+        }}>
+          {prodotti.length} {prodotti.length === 1 ? 'prodotto in esaurimento' : 'prodotti in esaurimento'}
+        </h3>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
         {prodotti.map(p => (
-          <li key={p.id}>
-            <strong>{p.nome}</strong> — rimasti {p.quantita} {p.unita} (soglia minima: {p.soglia_minima})
-          </li>
+          <div key={p.id} style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            fontSize: 14,
+            color: 'var(--text-primary)',
+          }}>
+            <span>• {p.nome}</span>
+            <span style={{
+              backgroundColor: 'var(--amber)',
+              color: 'white',
+              borderRadius: 'var(--radius-full)',
+              padding: '2px 10px',
+              fontSize: 12,
+              fontWeight: 600,
+            }}>
+              {p.quantita} {p.unita}
+            </span>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

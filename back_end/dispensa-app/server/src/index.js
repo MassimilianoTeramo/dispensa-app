@@ -14,10 +14,22 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/prodotti', prodottiRoutes);
 
-const PORT = process.env.PORT || 5000;
-
-initDB().then(() => {
-  app.listen(PORT, () => console.log(`🚀 Server attivo su porta ${PORT}`));
-}).catch((err) => {
-  console.error('❌ Errore avvio server:', err);
+// Gestione route non trovate
+app.use((req, res) => {
+  res.status(404).json({ error: 'Endpoint non trovato' });
 });
+
+// Gestione errori globale
+app.use((err, req, res, next) => {
+  console.error('❌ Errore non gestito:', err);
+  res.status(500).json({ error: 'Errore interno del server' });
+});
+
+const PORT = process.env.PORT || 3001;
+
+const start = async () => {
+  await initDB();
+  app.listen(PORT, () => console.log(`🚀 Server attivo su porta ${PORT}`));
+};
+
+start().catch((err) => console.error('❌ Errore avvio server:', err));
