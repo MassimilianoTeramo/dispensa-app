@@ -11,10 +11,18 @@ const prodottiRoutes = require('./routes/prodotti');
 const app = express();
 
 app.use(cors({
-  origin: [
-    'https://dispensa-app-rho.vercel.app',
-    'http://localhost:5173' // per sviluppo locale
-  ],
+  origin: function(origin, callback) {
+    const allowed = [
+      'https://dispensa-app-rho.vercel.app',
+      'http://localhost:5173'
+    ];
+    // accetta anche preview Vercel
+    if (!origin || allowed.includes(origin) || origin.endsWith('.vercel.app')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
 
