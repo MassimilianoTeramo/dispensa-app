@@ -11,9 +11,12 @@ const prodottiRoutes = require('./routes/prodotti');
 const app = express();
 
 app.use(cors({
-  origin: '*',
+  origin: [
+    'https://dispensa-app-rho.vercel.app',
+    'http://localhost:5173' // per sviluppo locale
+  ],
+  credentials: true
 }));
-app.use(express.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/prodotti', prodottiRoutes);
