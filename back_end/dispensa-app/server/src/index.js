@@ -9,7 +9,7 @@ const authRoutes = require('./routes/auth');
 const prodottiRoutes = require('./routes/prodotti');
 
 const app = express();
-
+app.options('*', cors());
 app.use(cors({
   origin: function(origin, callback) {
     const allowed = [
