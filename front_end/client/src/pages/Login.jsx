@@ -115,6 +115,7 @@ function Login() {
               fontSize: 16,
               fontWeight: 600,
               transition: 'all 0.2s',
+              marginBottom: 12,
             }}>
               {loading ? 'Signing in...' : 'Sign in'}
             </button>
