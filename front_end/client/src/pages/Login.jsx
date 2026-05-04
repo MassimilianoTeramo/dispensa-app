@@ -25,6 +25,19 @@ function Login() {
     }
   };
 
+  const handleDemoLogin = async () => {
+    setLoading(true);
+    try {
+      const res = await api.post('/auth/demo');
+      login(res.data.token);
+      navigate('/');
+    } catch {
+      setErrore('Unable to login to demo account');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div style={{
       minHeight: '100vh',
@@ -104,6 +117,19 @@ function Login() {
               transition: 'all 0.2s',
             }}>
               {loading ? 'Signing in...' : 'Sign in'}
+            </button>
+            <button type="button" onClick={handleDemoLogin} disabled={loading} style={{
+              width: '100%',
+              padding: '14px',
+              backgroundColor: loading ? 'var(--text-muted)' : 'var(--green-dark)',
+              color: 'var(--cream)',
+              border: 'none',
+              borderRadius: 'var(--radius-sm)',
+              fontSize: 16,
+              fontWeight: 600,
+              transition: 'all 0.2s',
+            }}>
+              {loading ? 'Loading...' : 'Demo Login'}
             </button>
           </form>
         </div>
