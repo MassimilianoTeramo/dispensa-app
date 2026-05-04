@@ -46,4 +46,26 @@ const login = async (req, res) => {
   }
 };
 
-module.exports = { register, login };
+// POST /api/auth/demo
+const demoLogin = async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM utenti WHERE email = $1', ['demo@user.app']);
+    const utente = result.rows[0];
+
+    if (!utente) {
+      return res.status(404).json({ error: 'Utente demo non trovato' });
+    }
+
+    const token = jwt.sign(
+      { id: utente.id, email: utente.email },
+      process.env.JWT_SECRET,
+      { expiresIn: '24h' }
+    );
+
+    res.json({ token });
+  } catch (err) {
+    res.status(500).json({ error: 'Errore del server' });
+  }
+};
+
+module.exports = { register, login, demoLogin };
