@@ -8,7 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
 const { initDB } = require('./config/db');
 const authRoutes = require('./routes/auth');
 const prodottiRoutes = require('./routes/prodotti');
-require('./src/cronJobs');
+require('./cronJobs');
 
 const app = express();
 
