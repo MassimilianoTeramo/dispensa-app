@@ -1,3 +1,4 @@
+
 const express = require('express');
 const cors = require('cors');
 if (process.env.NODE_ENV !== 'production') {
@@ -7,6 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
 const { initDB } = require('./config/db');
 const authRoutes = require('./routes/auth');
 const prodottiRoutes = require('./routes/prodotti');
+require('./src/cronJobs');
 
 const app = express();
 
