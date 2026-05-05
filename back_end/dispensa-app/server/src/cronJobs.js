@@ -1,6 +1,6 @@
 const cron = require('node-cron');
 const pool = require('./config/db'); // adatta il path al file db
-const demoData = require('../demoData.json');
+const demoData = require('./demoData.json');
 
 const resetDemoData = async () => {
   try {
