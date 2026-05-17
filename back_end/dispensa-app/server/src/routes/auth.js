@@ -9,7 +9,7 @@ const authLimiter = rateLimit({
   message: { error: 'Troppi tentativi, riprova tra 15 minuti' },
 });
 
-router.post('/register', authLimiter, register);
+//router.post('/register', authLimiter, register);
 router.post('/login', authLimiter, login);
 router.post('/demo', demoLogin);
 module.exports = router;

@@ -135,12 +135,12 @@ function Login() {
           </form>
         </div>
 
-        <p style={{ textAlign: 'center', marginTop: 24, color: 'var(--text-secondary)', fontSize: 14 }}>
+        {/* <p style={{ textAlign: 'center', marginTop: 24, color: 'var(--text-secondary)', fontSize: 14 }}>
           Don't have an account?{' '}
           <Link to="/register" style={{ color: 'var(--green-light)', fontWeight: 600, textDecoration: 'none' }}>
             Sign up
           </Link>
-        </p>
+        </p> */}
       </div>
     </div>
   );
