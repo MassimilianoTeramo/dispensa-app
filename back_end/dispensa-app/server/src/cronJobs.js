@@ -2,6 +2,9 @@ const cron = require('node-cron');
 const pool = require('./config/db'); // adatta il path al file db
 const demoData = require('./demoData.json');
 
+console.log('✅ Cron job registrato');
+console.log('📦 Demo data caricato:', demoData.length, 'prodotti');
+
 const resetDemoData = async () => {
   try {
     console.log('Reset demo data started...');
