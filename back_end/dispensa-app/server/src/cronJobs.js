@@ -1,5 +1,5 @@
 const cron = require('node-cron');
-const pool = require('./config/db'); // adatta il path al file db
+const { pool } = require('./config/db'); // adatta il path al file db
 const demoData = require('./demoData.json');
 
 console.log('✅ Cron job registrato');
