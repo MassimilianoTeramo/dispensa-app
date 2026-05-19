@@ -8,7 +8,7 @@ const {
   getPrezzi, aggiungiPrezzo, eliminaPrezzo
 } = require('../controllers/prezziController');
 
-router.use(auth); //roots authentication constrol 
+router.use(auth); //roots authentication control 
 
 router.get('/', getProdotti);
 router.get('/alert', getAlert);

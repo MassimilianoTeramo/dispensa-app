@@ -7,7 +7,7 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
-// Crea le tabelle se non esistono
+// Creating tables if they don't exist
 
 const initDB = async () => {
   await pool.query(`
@@ -38,7 +38,7 @@ const initDB = async () => {
       aggiornato_il TIMESTAMP DEFAULT NOW()
     );
   `);
-  console.log('✅ Database pronto');
+  
 };
 
 module.exports = { pool, initDB };

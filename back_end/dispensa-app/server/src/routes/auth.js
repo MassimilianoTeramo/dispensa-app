@@ -4,8 +4,8 @@ const rateLimit = require('express-rate-limit');
 const { register, login, demoLogin } = require('../controllers/authController');
 
 const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minuti
-  max: 10, // max 10 tentativi
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 10, // max 10 attempts
   message: { error: 'Troppi tentativi, riprova tra 15 minuti' },
 });
 

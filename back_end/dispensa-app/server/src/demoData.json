@@ -1,71 +1,141 @@
 [
-  { "utente_id": 2, "nome": "Latte Intero", "categoria": "Latticini", "quantita": 3, "unita": "litri", "soglia_minima": 1, "scadenza": "2026-06-15",
+  {
+    "utente_id": 2,
+    "nome": "Whole Milk",
+    "categoria": "Dairy",
+    "quantita": 3,
+    "unita": "liters",
+    "soglia_minima": 1,
+    "scadenza": "2026-06-15",
     "prezzi": [
       { "supermercato": "Asda", "prezzo": 1.49 },
       { "supermercato": "Aldi", "prezzo": 1.39 },
       { "supermercato": "Lidl", "prezzo": 1.19 }
     ]
   },
-  { "utente_id": 2, "nome": "Pasta Barilla", "categoria": "Cereali", "quantita": 4, "unita": "pacchi", "soglia_minima": 2, "scadenza": "2027-01-01",
+  {
+    "utente_id": 2,
+    "nome": "Barilla Pasta",
+    "categoria": "Grains",
+    "quantita": 4,
+    "unita": "packs",
+    "soglia_minima": 2,
+    "scadenza": "2027-01-01",
     "prezzi": [
       { "supermercato": "Asda", "prezzo": 1.29 },
       { "supermercato": "Aldi", "prezzo": 1.19 },
       { "supermercato": "Lidl", "prezzo": 0.99 }
     ]
   },
-  { "utente_id": 2, "nome": "Olio EVO", "categoria": "Condimenti", "quantita": 1, "unita": "litri", "soglia_minima": 1, "scadenza": "2027-03-01",
+  {
+    "utente_id": 2,
+    "nome": "Extra Virgin Olive Oil",
+    "categoria": "Condiments",
+    "quantita": 1,
+    "unita": "liters",
+    "soglia_minima": 1,
+    "scadenza": "2027-03-01",
     "prezzi": [
-      { "supermercato": "Asda", "prezzo": 8.90 },
+      { "supermercato": "Asda", "prezzo": 8.9 },
       { "supermercato": "Aldi", "prezzo": 7.99 },
       { "supermercato": "Lidl", "prezzo": 6.49 }
     ]
   },
-  { "utente_id": 2, "nome": "Uova", "categoria": "Proteine", "quantita": 6, "unita": "uova", "soglia_minima": 6, "scadenza": "2026-06-20",
+  {
+    "utente_id": 2,
+    "nome": "Eggs",
+    "categoria": "Protein",
+    "quantita": 6,
+    "unita": "eggs",
+    "soglia_minima": 6,
+    "scadenza": "2026-06-20",
     "prezzi": [
       { "supermercato": "Asda", "prezzo": 2.99 },
       { "supermercato": "Aldi", "prezzo": 2.79 },
       { "supermercato": "Lidl", "prezzo": 2.49 }
     ]
   },
-  { "utente_id": 2, "nome": "Pane Integrale", "categoria": "Prodotti da Forno", "quantita": 1, "unita": "pagnotta", "soglia_minima": 1, "scadenza": "2026-05-10",
+  {
+    "utente_id": 2,
+    "nome": "Whole Wheat Bread",
+    "categoria": "Bakery",
+    "quantita": 1,
+    "unita": "loaf",
+    "soglia_minima": 1,
+    "scadenza": "2026-05-10",
     "prezzi": [
-      { "supermercato": "Asda", "prezzo": 2.50 },
-      { "supermercato": "Aldi", "prezzo": 2.20 },
+      { "supermercato": "Asda", "prezzo": 2.5 },
+      { "supermercato": "Aldi", "prezzo": 2.2 },
       { "supermercato": "Lidl", "prezzo": 1.89 }
     ]
   },
-  { "utente_id": 2, "nome": "Pomodori Pelati", "categoria": "Conserve", "quantita": 5, "unita": "lattine", "soglia_minima": 2, "scadenza": "2027-06-01",
+  {
+    "utente_id": 2,
+    "nome": "Canned Tomatoes",
+    "categoria": "Canned Goods",
+    "quantita": 5,
+    "unita": "cans",
+    "soglia_minima": 2,
+    "scadenza": "2027-06-01",
     "prezzi": [
       { "supermercato": "Asda", "prezzo": 0.99 },
       { "supermercato": "Aldi", "prezzo": 0.89 },
       { "supermercato": "Lidl", "prezzo": 0.69 }
     ]
   },
-  { "utente_id": 2, "nome": "Yogurt Greco", "categoria": "Latticini", "quantita": 4, "unita": "vasetti", "soglia_minima": 2, "scadenza": "2026-06-10",
+  {
+    "utente_id": 2,
+    "nome": "Greek Yogurt",
+    "categoria": "Dairy",
+    "quantita": 4,
+    "unita": "cups",
+    "soglia_minima": 2,
+    "scadenza": "2026-06-10",
     "prezzi": [
       { "supermercato": "Asda", "prezzo": 1.79 },
       { "supermercato": "Aldi", "prezzo": 1.59 },
       { "supermercato": "Lidl", "prezzo": 1.29 }
     ]
   },
-  { "utente_id": 2, "nome": "Farina 00", "categoria": "Cereali", "quantita": 2, "unita": "kg", "soglia_minima": 1, "scadenza": "2027-01-01",
+  {
+    "utente_id": 2,
+    "nome": "All-Purpose Flour",
+    "categoria": "Grains",
+    "quantita": 2,
+    "unita": "kg",
+    "soglia_minima": 1,
+    "scadenza": "2027-01-01",
     "prezzi": [
       { "supermercato": "Asda", "prezzo": 1.09 },
       { "supermercato": "Aldi", "prezzo": 0.99 },
       { "supermercato": "Lidl", "prezzo": 0.79 }
     ]
   },
-  { "utente_id": 2, "nome": "Acqua Naturale", "categoria": "Bevande", "quantita": 6, "unita": "bottiglie", "soglia_minima": 3, "scadenza": "2028-01-01",
+  {
+    "utente_id": 2,
+    "nome": "Still Water",
+    "categoria": "Beverages",
+    "quantita": 6,
+    "unita": "bottles",
+    "soglia_minima": 3,
+    "scadenza": "2028-01-01",
     "prezzi": [
       { "supermercato": "Asda", "prezzo": 0.25 },
       { "supermercato": "Aldi", "prezzo": 0.22 },
       { "supermercato": "Lidl", "prezzo": 0.19 }
     ]
   },
-  { "utente_id": 2, "nome": "Prosciutto Cotto", "categoria": "Salumi", "quantita": 200, "unita": "grammi", "soglia_minima": 100, "scadenza": "2026-05-20",
+  {
+    "utente_id": 2,
+    "nome": "Cooked Ham",
+    "categoria": "Cold Cuts",
+    "quantita": 200,
+    "unita": "grams",
+    "soglia_minima": 100,
+    "scadenza": "2026-05-20",
     "prezzi": [
-      { "supermercato": "Asda", "prezzo": 3.90 },
-      { "supermercato": "Aldi", "prezzo": 3.50 },
+      { "supermercato": "Asda", "prezzo": 3.9 },
+      { "supermercato": "Aldi", "prezzo": 3.5 },
       { "supermercato": "Lidl", "prezzo": 2.99 }
     ]
   }

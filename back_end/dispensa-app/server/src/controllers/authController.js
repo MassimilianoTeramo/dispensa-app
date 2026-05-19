@@ -7,7 +7,7 @@ const register = async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password)
-    return res.status(400).json({ error: 'Email e password obbligatorie' });
+    return res.status(400).json({ error: 'Email and password are required' });
 
   try {
     const passwordHash = await bcrypt.hash(password, 10);
@@ -18,8 +18,8 @@ const register = async (req, res) => {
     res.status(201).json({ utente: result.rows[0] });
   } catch (err) {
     if (err.code === '23505') // unique violation
-      return res.status(409).json({ error: 'Email già registrata' });
-    res.status(500).json({ error: 'Errore del server' });
+      return res.status(409).json({ error: 'Email already registered' });
+    res.status(500).json({ error: 'Server error' });
   }
 };
 
@@ -32,7 +32,7 @@ const login = async (req, res) => {
     const utente = result.rows[0];
 
     if (!utente || !(await bcrypt.compare(password, utente.password_hash)))
-      return res.status(401).json({ error: 'Credenziali non valide' });
+      return res.status(401).json({ error: 'Invalid credentials' });
 
     const token = jwt.sign(
       { id: utente.id, email: utente.email },
@@ -42,7 +42,7 @@ const login = async (req, res) => {
 
     res.json({ token });
   } catch {
-    res.status(500).json({ error: 'Errore del server' });
+    res.status(500).json({ error: 'Server error' });
   }
 };
 
@@ -53,7 +53,7 @@ const demoLogin = async (req, res) => {
     const utente = result.rows[0];
 
     if (!utente) {
-      return res.status(404).json({ error: 'Utente demo non trovato' });
+      return res.status(404).json({ error: 'Demo user not found' });
     }
 
     const token = jwt.sign(
@@ -64,7 +64,7 @@ const demoLogin = async (req, res) => {
 
     res.json({ token });
   } catch (err) {
-    res.status(500).json({ error: 'Errore del server' });
+    res.status(500).json({ error: 'Server error' });
   }
 };
 

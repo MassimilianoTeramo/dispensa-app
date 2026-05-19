@@ -13,7 +13,7 @@ const { resetDemoData } = require('./cronJobs');
 const app = express();
 
 app.set('trust proxy', 1); // fix rate-limit su Railway
-app.use(express.json()); // assicura che req.body venga parsato
+app.use(express.json()); // to parse JSON bodies
 app.options('*', cors());
 app.use(cors({
   origin: function(origin, callback) {
@@ -36,24 +36,23 @@ app.use('/api/prodotti', prodottiRoutes);
 
 // Gestione route non trovate
 app.use((req, res) => {
-  res.status(404).json({ error: 'Endpoint non trovato' });
+  res.status(404).json({ error: 'Endpoint not found' });
 });
 
 // Gestione errori globale
 app.use((err, req, res, next) => {
-  console.error('❌ Errore non gestito:', err);
-  res.status(500).json({ error: 'Errore interno del server' });
+  console.error('❌ Error:', err);
+  res.status(500).json({ error: 'Server error' });
 });
 
 const PORT = process.env.PORT || 3001;
 
 const start = async () => {
   await initDB();
-  app.listen(PORT, () => console.log(`🚀 Server attivo su porta ${PORT}`));
+  app.listen(PORT, () => console.log(` Server active on port ${PORT}`));
 };
 
-//start().catch((err) => console.error('❌ Errore avvio server:', err));
 
 start().then(() => {
   resetDemoData(); // test immediato
-}).catch((err) => console.error('❌ Errore avvio server:', err));
+}).catch((err) => console.error('❌ Error starting server:', err));

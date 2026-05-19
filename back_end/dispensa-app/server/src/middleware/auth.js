@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.utente = decoded; // aggiunge { id, email } alla request
+    req.utente = decoded; // to add user info to request
     next();
   } catch {
     res.status(401).json({ error: 'Token non valido' });

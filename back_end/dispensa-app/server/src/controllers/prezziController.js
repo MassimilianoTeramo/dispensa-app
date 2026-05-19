@@ -16,7 +16,7 @@ const aggiungiPrezzo = async (req, res) => {
   const { supermercato, prezzo } = req.body;
 
   if (!supermercato || !prezzo)
-    return res.status(400).json({ error: 'Supermercato e prezzo obbligatori' });
+    return res.status(400).json({ error: 'Supermarket and price are required' });
 
   // Se esiste già un prezzo per questo supermercato, aggiornalo
   const esistente = await pool.query(
@@ -44,7 +44,7 @@ const aggiungiPrezzo = async (req, res) => {
 const eliminaPrezzo = async (req, res) => {
   const { prezzoId } = req.params;
   await pool.query('DELETE FROM prezzi WHERE id = $1', [prezzoId]);
-  res.json({ messaggio: 'Prezzo eliminato' });
+  res.json({ message: 'Price deleted' });
 };
 
 module.exports = { getPrezzi, aggiungiPrezzo, eliminaPrezzo };
