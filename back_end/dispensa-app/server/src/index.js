@@ -9,7 +9,7 @@ const { initDB } = require('./config/db');
 const authRoutes = require('./routes/auth');
 const prodottiRoutes = require('./routes/prodotti');
 require('./cronJobs');
-
+const { resetDemoData } = require('./cronJobs');
 const app = express();
 
 app.set('trust proxy', 1); // fix rate-limit su Railway
@@ -52,4 +52,8 @@ const start = async () => {
   app.listen(PORT, () => console.log(`🚀 Server attivo su porta ${PORT}`));
 };
 
-start().catch((err) => console.error('❌ Errore avvio server:', err));
+//start().catch((err) => console.error('❌ Errore avvio server:', err));
+
+start().then(() => {
+  resetDemoData(); // test immediato
+}).catch((err) => console.error('❌ Errore avvio server:', err));
